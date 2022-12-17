@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      *{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        color: red;
+        background-color: RGB(255,255,0);
+        font-size: 25px;
+      }
+
+      .navbar{
+        width:100%;
+        background-color: burlywood;
+      }
+
+      .navbar .container .content ul{
+        list-style: none;
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        align-items: space-between;
+        justify-content: center;
+      }
+      li{
+        padding: 20px;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        width:100%;
+        padding: 50px;
+      }
+    </style>
+    <title>О нас</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+          <div class="content">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Главная</a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.php">Ассортимент</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.php">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="about.html">О нас</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="wrapper">
+        <h1 class="text-center">О нас</h1>
+        <h4>У нас есть много складов! Приезжайте к нам</h4>
+        <h4>у нас есть 3 точки в Москве:</h4>
+        <ol>
+          <li>Щелковская</li>
+          <li>Новогиреево</li>
+          <li>Юго-Западная</li>
+        </ol>
+      </div>
+</body>
+</html>

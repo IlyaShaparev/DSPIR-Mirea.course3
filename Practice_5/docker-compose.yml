@@ -1,0 +1,42 @@
+version: '3'
+services:
+  apache:
+    build: ./apache
+    volumes:
+      - ./apache/src:/var/www/html/
+      - ./apache/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./apache/php.ini:/usr/local/etc/php/php.ini
+    environment:
+      - DB_HOST=my-sql
+      - DB_PORT=3306
+      - DB_NAME=appDB
+      - DB_USER=user
+      - DB_PASSWORD=password
+    depends_on:
+      - sql
+
+  sql:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+
+    
+  nginx:
+    build: ./nginx
+    volumes:
+      - ./nginx/src:/etc/nginx/html/
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - 85:85
+    depends_on:
+     - apache
+
+  redis:
+    container_name: redis
+    image: redis:alpine3.16
+    restart: always
+    ports:
+      - "6379:6379"

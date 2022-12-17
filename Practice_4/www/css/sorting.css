@@ -1,0 +1,17 @@
+body {
+    font-size: 25px;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+p{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    text-decoration: double;
+}
